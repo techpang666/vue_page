@@ -14,7 +14,7 @@ after_success:
   - git config --global user.name "travis"
   - git config --global user.email "666@gmail.com"
   - git add .
-  - git commit -m "快乐起飞"
+  - git commit -m "test_build"
   - git push --quiet --force "https://${vue_page}@github.com/techpang666/vue_page.git" master:gh-page
 
 branches:
