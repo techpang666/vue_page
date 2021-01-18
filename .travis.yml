@@ -1,25 +1,76 @@
 language: node_js
 node_js:
-  - "8"
+  - "node"
 
-install:
-  - npm install
+cache: npm
 
-script:
-  - npm run build
+script: npm run build
 
-after_success:
-  - cd ./dist
-  - git init
-  - git config --global user.name "test"
-  - git config --global user.email "666@gmail.com"
-  - git add .
-  - git commit -m "Automatically update from travis-ci"
-  - git push --quiet --force  "https://${vue_page}@github.com/techpang666/vue_page.git" master:gh-page
+deploy:
+provider: pages
+skip_cleanup: true
+github_token: ${vue_page}
+local_dir: dist
+on:
+  branch: master
 
-branches:
-  only:
-    - master
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# language: node_js
+# node_js:
+#   - "8"
+
+# install:
+#   - npm install
+
+# script:
+#   - npm run build
+
+# after_success:
+#   - cd ./dist
+#   - git init
+#   - git config --global user.name "test"
+#   - git config --global user.email "666@gmail.com"
+#   - git add .
+#   - git commit -m "Automatically update from travis-ci"
+#   - git push --quiet --force  "https://${vue_page}@github.com/techpang666/vue_page.git" master:gh-page
+
+# branches:
+#   only:
+#     - master
 
 
 
