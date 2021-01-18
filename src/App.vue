@@ -1,28 +1,19 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <h2>这是基于Vue+Travis自动部署生成的页面</h2>
+    <h2>原本快乐的我不快乐了</h2>
+    <h2>因为提交信息带中文</h2>
+    <h2>以为是脚本的问题</h2>
+    <h2>测试了好久</h2>
+    <h2>重点编译还慢</h2>
+    <h2>等到人都裂开了</h2>
+    <h2>笔记教程都懒得输出了</h2>
+    <h1>🤕😒🤨😑🥺</h1>
   </div>
 </template>
 
-<script>
-import HelloWorld from './components/HelloWorld.vue'
-
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
-</script>
-
-<style lang="less">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style lang="less" scoped>
+* {
+  color: pink;
 }
 </style>

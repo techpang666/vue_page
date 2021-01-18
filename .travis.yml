@@ -1,21 +1,28 @@
+# 基于Travis自动化部署vue项目起飞🚀
+
+# 指定语言及版本
 language: node_js
 node_js: stable
 
+# 安装项目包
 install:
   - npm install
 
+# 运行脚本
 script:
   - npm run build
 
+# 自动化编译推送GitHub
 after_success:
   - cd ./dist
   - git init
   - git config --global user.name "travis"
   - git config --global user.email "666@gmail.com"
   - git add .
-  - git commit -m "test_dds"
+  - git commit -m "auto_push"
   - git push --quiet --force "https://${vue_page}@github.com/techpang666/vue_page.git" master:gh-page
 
+# 触发自动化部署的分支
 branches:
   only:
     - master
