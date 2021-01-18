@@ -1,6 +1,5 @@
 language: node_js
-node_js:
-  - "8"
+node_js: stable
 
 install:
   - npm install
@@ -14,7 +13,7 @@ after_success:
   - git config --global user.name "travis"
   - git config --global user.email "666@gmail.com"
   - git add .
-  - git commit -m "test_build"
+  - git commit -m "test_dds"
   - git push --quiet --force "https://${vue_page}@github.com/techpang666/vue_page.git" master:gh-page
 
 branches:
