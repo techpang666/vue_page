@@ -1,105 +1,22 @@
 language: node_js
-node_js:
-  - "node"
+node_js: stable
+  # - "node"
 
-cache: npm
+install:
+  - npm install
 
-script: npm run build
+script:
+  - npm run build
 
-deploy:
-provider: pages
-skip_cleanup: true
-github_token: ${vue_page}
-local_dir: dist
-on:
-  branch: master
+after_success:
+  - cd ./dist
+  - git init
+  - git config --global user.name "travis"
+  - git config --global user.email "666@gmail.com"
+  - git add .
+  - git commit -m "快乐起飞🚀"
+  - git push --quiet --force "https://${vue_page}@github.com/techpang666/vue_page.git" master:gh-page
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# language: node_js
-# node_js:
-#   - "8"
-
-# install:
-#   - npm install
-
-# script:
-#   - npm run build
-
-# after_success:
-#   - cd ./dist
-#   - git init
-#   - git config --global user.name "test"
-#   - git config --global user.email "666@gmail.com"
-#   - git add .
-#   - git commit -m "Automatically update from travis-ci"
-#   - git push --quiet --force  "https://${vue_page}@github.com/techpang666/vue_page.git" master:gh-page
-
-# branches:
-#   only:
-#     - master
-
-
-
-
-
-
-# language: node_js
-
-# node_js: stable
-
-# install:
-#   - npm install
-
-# script:
-#   - npm run build
-
-# after_success:
-#   - cd ./public
-#   - git init
-#   - git config --global user.name "test"
-#   - git config --global user.email "666@qq.com"
-#   - git add .
-#   - git commit -m "快乐起飞🚀"
-#   - git push --quiet --force  "https://${vue_page}@github.com/techpang666/vue_page.git" master:gh-page
-
-# branches:
-#   only:
-#     - master
-
-# env:
-#   global:
-#     - GH_REF: github.com/techpang666/vue_page.git
+branches:
+  only:
+    - master
