@@ -1,19 +1,16 @@
 <template>
   <div>
-    <h2>这是基于Vue+Travis自动部署生成的页面</h2>
-    <h2>原本快乐的我不快乐了</h2>
-    <h2>因为提交信息带中文</h2>
-    <h2>以为是脚本的问题</h2>
-    <h2>测试了好久</h2>
-    <h2>重点编译还慢</h2>
-    <h2>等到人都裂开了</h2>
-    <h2>笔记教程都懒得输出了</h2>
-    <h1>🤕😒🤨😑🥺</h1>
+    <h2>这是基于Travis自动部署的页面</h2>
+    <h2>开启Vue项目的云端化访问</h2>
+    <h2><a href="https://techpang.top/">这里点击开启快乐起飞🚀</a></h2>
   </div>
 </template>
 
 <style lang="less" scoped>
 * {
   color: pink;
+}
+a {
+  text-decoration: none;
 }
 </style>
